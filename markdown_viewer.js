@@ -29,19 +29,19 @@ function toMarkdown(someHtmlString) {
   //underline
   theText = theText.replace(/<span style="text-decoration:underline;">(.+)<\/span>/g, '_$1_');
   //bold
-  theText = theText.replace(/<strong>(.+)<\/strong>/g, '**$1**/');
+  theText = theText.replace(/<strong>(.+)<\/strong>/g, '**$1**');
   //italic
   theText = theText.replace(/<em>(.+)<\/em>/g, '*$1*');
   //lists
   theText = theText.replace(/<ul>([\s\S]+)<\/ul>/g, "\n--\n$1--\n");
-  theText = theText.replace(/<ol>([\s\S])<\/ol>/g, "\n##\n$1##\n");
+  theText = theText.replace(/<ol>([\s\S]+)<\/ol>/g, "\n##\n$1##\n");
   theText = theText.replace(/<li>(.+)<\/li>/g, "- $1\n");
   //paragraphs
   //theText = theText.replace(/\n\n([\s\S]+)\n\n/g, '<p>$1</p>');
   //new line
   theText = theText.replace(/<br \/>/g, "\n");
   //links
-  theText = theText.replace(/<a href="(.+)">(.+)<\/a>/g, "[$1]($2)");
+  theText = theText.replace(/<a href="(.+)">(.+)<\/a>/g, "[$2]($1)");
 
   return theText;
 }
