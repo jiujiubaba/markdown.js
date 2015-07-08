@@ -5,19 +5,17 @@
     <script type="text/javascript">
       function changeGivenTheseValues(elem) {
         var sampleText = elem.value;
-
         var theHtml = toHtml(sampleText);
-
-        document.getElementById('html-out').innerHTML = theHtml;
-
         var theMd = toMarkdown(theHtml);
 
+        document.getElementById('html-out').innerHTML = theHtml;
         document.getElementById('md-out').innerHTML = theMd;
       }
     </script>
   </head>
   <body>
-    <textarea onchange="changeGivenTheseValues(this);"/>
+    <textarea onchange="changeGivenTheseValues(this);"></textarea>
+
     <div id="html-out"></div>
     <textarea id="md-out"></textarea>
   </body>
