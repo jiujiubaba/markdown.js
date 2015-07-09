@@ -10,13 +10,22 @@
 
         document.getElementById('html-out').innerHTML = theHtml;
         document.getElementById('md-out').innerHTML = theMd;
+
+        console.log('html:\n' + theHtml);
+        console.log('md:\n' + theMd);
       }
     </script>
+    <style>
+    .floater {
+      float: left;
+      margin: 20px;
+    }
+    </style>
   </head>
   <body>
-    <textarea onchange="changeGivenTheseValues(this);"></textarea>
+    <textarea class="floater" rows="20" onchange="changeGivenTheseValues(this);"></textarea>
 
-    <div id="html-out"></div>
-    <textarea id="md-out"></textarea>
+    <div class="floater" id="html-out"></div>
+    <textarea class="floater" rows="20" id="md-out"></textarea>
   </body>
 </html>
