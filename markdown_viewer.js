@@ -35,7 +35,8 @@ function toMarkdown(someHtmlString) {
   //lists
   theText = theText.replace(/<ul>([\s\S]+)<\/ul>/g, "\n--\n$1--\n");
   theText = theText.replace(/<ol>([\s\S]+)<\/ol>/g, "\n##\n$1##\n");
-  theText = theText.replace(/<li>(.+)<\/li>/g, "- $1\n");
+  theText = theText.replace(/<\/li>/g, '</li>\n');
+  theText = theText.replace(/<li>(.+)<\/li>/g, "- $1");
   //paragraphs
   //theText = theText.replace(/\n\n([\s\S]+)\n\n/g, '<p>$1</p>');
   //new line
