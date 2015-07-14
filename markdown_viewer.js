@@ -27,11 +27,11 @@ function toMarkdown(someHtmlString) {
   var theText = someHtmlString;
 
   //underline
-  theText = theText.replace(/<span style="text-decoration:underline;">(.+)<\/span>/g, '_$1_');
+  theText = theText.replace(/<span style="text-decoration:underline;">(.+?)<\/span>/g, '_$1_');
   //bold
-  theText = theText.replace(/<strong>(.+)<\/strong>/g, '**$1**');
+  theText = theText.replace(/<strong>(.+?)<\/strong>/g, '**$1**');
   //italic
-  theText = theText.replace(/<em>(.+)<\/em>/g, '*$1*');
+  theText = theText.replace(/<em>(.+?)<\/em>/g, '*$1*');
   //lists
   //theText = theText.replace(/<ul>([\s\S]+)<\/ul>/g, "\n--\n$1--\n");
   //theText = theText.replace(/<ol>([\s\S]+)<\/ol>/g, "\n##\n$1##\n");
