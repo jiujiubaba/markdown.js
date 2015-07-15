@@ -18,7 +18,7 @@ function toHtml(someMarkdownedString) {
   //new line
   theText = theText.replace(/\n/g, '<br />');
   //links
-  theText = theText.replace(/\[(.+)\]\((.+)\)/g, '<a href="$2">$1</a>');
+  theText = theText.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>');
 
   return theText;
 }
@@ -48,7 +48,7 @@ function toMarkdown(someHtmlString) {
   //new line
   theText = theText.replace(/<br \/>/g, "\n");
   //links
-  theText = theText.replace(/<a href="(.+)">(.+)<\/a>/g, "[$2]($1)");
+  theText = theText.replace(/<a href="(.+?)">(.+?)<\/a>/g, "[$2]($1)");
 
   return theText;
 }
