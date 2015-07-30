@@ -1,43 +1,46 @@
 <!doctype html>
 <html>
-  <head>
-    <script src="markdown_viewer.js"></script>
-    <script type="text/javascript">
-      function changeGivenTheseValues(elem) {
-        var sampleText = elem.value;
-        var theHtml = toHtml(sampleText);
-        var theMd = toMarkdown(theHtml);
 
-        document.getElementById('html-out').innerHTML = theHtml;
-        document.getElementById('md-out').innerHTML = theMd;
+<head>
+  <script src="markdown_viewer.js"></script>
+  <script type="text/javascript">
+    function changeGivenTheseValues(elem) {
+      var sampleText = elem.value;
+      var theHtml = toHtml(sampleText);
+      var theMd = toMarkdown(theHtml);
 
-        console.log('html:\n' + theHtml);
-        console.log('md:\n' + theMd);
+      document.getElementById('html-out').innerHTML = theHtml;
+      document.getElementById('md-out').innerHTML = theMd;
 
-        var theOut = document.getElementById('output-verify');
-        if (sampleText === theMd) {
-          theOut.innerHTML = 'success';
-          theOut.style.backgroundColor = 'rgba(35, 227, 60, 0.75)';
-        } else {
-          theOut.innerHTML = 'failure';
-          theOut.style.backgroundColor = 'rgba(226, 35, 60, 0.75)';
-        }
+      console.log('html:\n' + theHtml);
+      console.log('md:\n' + theMd);
+
+      var theOut = document.getElementById('output-verify');
+      if (sampleText === theMd) {
+        theOut.innerHTML = 'success';
+        theOut.style.backgroundColor = 'rgba(35, 227, 60, 0.75)';
+      } else {
+        theOut.innerHTML = 'failure';
+        theOut.style.backgroundColor = 'rgba(226, 35, 60, 0.75)';
       }
-    </script>
-    <style>
+    }
+  </script>
+  <style>
     .floater {
       float: left;
       margin: 20px;
     }
-    </style>
-  </head>
-  <body>
-    <div>
-      <textarea class="floater" rows="20" onchange="changeGivenTheseValues(this);"></textarea>
+  </style>
+</head>
 
-      <div class="floater" id="html-out"></div>
-      <textarea class="floater" rows="20" id="md-out"></textarea>
-    </div>
-    <div style="clear:both;" id="output-verify"></div>
-  </body>
+<body>
+  <div>
+    <textarea class="floater" rows="20" onchange="changeGivenTheseValues(this);"></textarea>
+
+    <div class="floater" id="html-out"></div>
+    <textarea class="floater" rows="20" id="md-out"></textarea>
+  </div>
+  <div style="clear:both;" id="output-verify"></div>
+</body>
+
 </html>
