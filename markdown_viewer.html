@@ -5,9 +5,11 @@
   <script src="markdown_viewer.js"></script>
   <script type="text/javascript">
     function changeGivenTheseValues(elem) {
+      var md = new MarkdownHandler();
+
       var sampleText = elem.value;
-      var theHtml = toHtml(sampleText);
-      var theMd = toMarkdown(theHtml);
+      var theHtml = md.toHtml(sampleText);
+      var theMd = md.toMarkdown(theHtml);
 
       document.getElementById('html-out').innerHTML = theHtml;
       document.getElementById('md-out').innerHTML = theMd;
@@ -41,6 +43,7 @@
     <textarea class="floater" rows="20" id="md-out"></textarea>
   </div>
   <div style="clear:both;" id="output-verify"></div>
+
 </body>
 
 </html>
